@@ -1,0 +1,17 @@
+.imageCell {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tableImage {
+    width: 60px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 2px;
+    border: solid 1px #ccc6;
+    padding: 3px;
+}
+
+.tableImageActive {
+    background-color: #4caf50 !important;
+}

@@ -1,0 +1,20 @@
+.mainSidebarMenu {
+    width: 100%;
+}
+
+.mainSidebarMenu ul {
+    list-style-type: none;
+    padding: 0px;
+}
+
+.mainSidebarMenu ul li a {
+    padding: 12px;
+    border-bottom: solid 1px #ccc5;
+    color: #fff;
+    display: block;
+}
+
+.mainSidebarMenu ul li:hover > a{
+    color: #000;
+    background-color: #fff;
+}

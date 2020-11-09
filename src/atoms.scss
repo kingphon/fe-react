@@ -1,0 +1,39 @@
+.slug-display {
+    display: block;
+    color: #2185d0;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.action-icon-button {
+    opacity: 0.5 !important;
+    font-size: 16px;
+
+    &:hover {
+        opacity: 1 !important;
+        font-size: 18px;
+    }
+}
+
+.ui.right.popup.confirm-popup:before {
+    right: 3px !important;
+}
+
+body .ui.green.label, .ui.green.labels .label {
+    background: #0DA956 !important;
+}
+
+body .ui.label, .ui.labels .label {
+    border-radius: 0;
+    font-weight: 500;
+}
+
+body .ui.button, body .ui.buttons .button, body .ui input, body .ui.selection.dropdown {
+    border-radius: 0 !important;
+}
+
+body .MuiFormLabel-asterisk, body .MuiInputLabel-asterisk {
+    color: red;
+}
