@@ -49,7 +49,7 @@ function getSorting(order, orderBy) {
 const search = (items, text) => items.filter(item => {
     let res = false
     for (const key in item) {
-        if (String(item[key]).includes(text)) {
+        if (String(item[key]).toLowerCase().includes(text.toLowerCase())) {
             res = true
         }
     }

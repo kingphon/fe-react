@@ -1,19 +1,27 @@
 import React, { useState } from 'react'
 import Icon from '@material-ui/core/Icon'
 import { Link } from 'react-router-dom'
-import { ExpandMoreOutlined, ExpandLessOutlined, MenuOutlined } from '@material-ui/icons';
+import {
+  ExpandMoreOutlined,
+  ExpandLessOutlined,
+  MenuOutlined,
+  HomeRounded,
+  RoomRounded,
+  HomeWorkRounded,
+  BusinessRounded
+} from '@material-ui/icons';
 
 const HorizontalSidebar = ({ navOpen, statusNav, setNavOpen }) => {
 
   const [menu, setMenu] = useState([
     {
       path: '/',
-      icon: 'home_rounded',
+      icon: HomeRounded,
       text: 'Dashboard',
       active: true
     },
     {
-      icon: 'place',
+      icon: RoomRounded,
       text: 'Location',
       active: false,
       subMenu: {
@@ -21,19 +29,19 @@ const HorizontalSidebar = ({ navOpen, statusNav, setNavOpen }) => {
         items: [
           {
             path: '/province',
-            icon: 'place',
+            icon: BusinessRounded,
             text: 'Province',
             active: false
           },
           {
             path: '/district',
-            icon: 'grid layout',
+            icon: HomeWorkRounded,
             text: 'District',
             active: false
           },
           {
             path: '/zone',
-            icon: 'grid layout',
+            icon: HomeRounded,
             text: 'Zone',
             active: false
           }
@@ -144,7 +152,7 @@ const HorizontalSidebar = ({ navOpen, statusNav, setNavOpen }) => {
               {item.path ?
                 (<Link to={item.path}>
                   <div>
-                    <Icon>{item.icon}</Icon>
+                    <item.icon />
                     {navOpen && <span> {item.text}</span>}
                   </div>
                   {(navOpen && item.hasOwnProperty('subMenu')) &&
@@ -154,23 +162,23 @@ const HorizontalSidebar = ({ navOpen, statusNav, setNavOpen }) => {
                 </Link>) :
                 (<Link onClick={() => handleOpenSubMenu(index)}>
                   <div>
-                    <Icon>{item.icon}</Icon>
+                    <item.icon />
                     {navOpen && <span> {item.text}</span>}
                   </div>
-                  {(navOpen && item.hasOwnProperty('subMenu')) &&
+                  {(item.hasOwnProperty('subMenu')) &&
                     (item.subMenu.open ? <ExpandMoreOutlined onClick={() => handleOpenSubMenu(index)} /> :
                       <ExpandLessOutlined onClick={() => handleOpenSubMenu(index)} />)
                   }
                 </Link>)
               }
 
-              {(navOpen && item.hasOwnProperty('subMenu') && item.subMenu.open) &&
+              {(item.hasOwnProperty('subMenu') && item.subMenu.open) &&
                 <ul className="main-layout--sidebar sub-menu">
                   {item.subMenu.items.map((item, index) => (
                     <li key={index}>
                       <Link to={item.path}>
-                        <Icon>{item.icon}</Icon>
-                        <span> {item.text}</span>
+                        <item.icon />
+                        {navOpen && <span>{item.text}</span>}
                       </Link>
                     </li>
                   ))}

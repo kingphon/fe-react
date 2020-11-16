@@ -3,25 +3,12 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import cookie from 'js-cookie'
 import './App.css'
-// import 'semantic-ui-css/semantic.min.css'
 import './colors.scss'
 
-// import ProductCategory from './components/pages/ProductCategory'
 import Main from './components/templates/layouts/Main';
-import Province from './components/pages/Province';
-// import ProductBrand from './components/pages/ProductBrand';
-// import UserGroup from './components/pages/UserGroup';
-// import ProductTypeGroup from './components/pages/ProductTypeGroup';
-// import ProductType from './components/pages/ProductType';
-// import Product from './components/pages/Product';
-// import Promotion from './components/pages/Promotion';
-// import Post from './components/pages/Post';
-// import PostType from './components/pages/PostType';
-// import Setting from './components/pages/Setting';
-// import UserProfile from './components/organisms/Setting/UserProfile';
-// import ChangePassword from './components/organisms/Setting/ChangePassword';
-// import { Login } from './components/organisms/Login';
-// import AuthRoute, { isAuthenticated } from './routes/AuthRoute';
+import Province from './components/pages/Location/Province';
+import District from './components/pages/Location/District';
+import Zone from './components/pages/Location/Zone';
 
 class App extends React.Component {
   componentDidCatch(error) {
@@ -38,6 +25,16 @@ class App extends React.Component {
       <Route exact path="/province">
         <Main>
           <Province/>
+        </Main>
+      </Route>
+      <Route exact path="/district">
+        <Main>
+          <District/>
+        </Main>
+      </Route>
+      <Route exact path="/zone">
+        <Main>
+          <Zone/>
         </Main>
       </Route>
     </Switch>
